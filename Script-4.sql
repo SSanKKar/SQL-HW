@@ -4,7 +4,7 @@ WHERE duration = (SELECT MAX(duration) FROM tracks);
 
 -- Название треков, продолжительность которых не менее 3,5 минут.
 SELECT title FROM tracks
-WHERE duration > '00:03:30';
+WHERE duration >= '00:03:30';
 
 -- Названия сборников, вышедших в период с 2018 по 2020 год включительно.
 SELECT title FROM compilations
@@ -16,7 +16,7 @@ WHERE name NOT LIKE '% %';
 
 -- Название треков, которые содержат слово «мой» или «my».
 SELECT title  FROM tracks
-WHERE LOWER(title) LIKE '%my%';
+WHERE title ~* '\yмой\y' OR title ~* '\ymy\y';
 
 -- Количество исполнителей в каждом жанре.
 SELECT g.name as genre_name, COUNT(ag.artist_id) FROM genres g 

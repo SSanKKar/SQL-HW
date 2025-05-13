@@ -1,6 +1,6 @@
 -- Добавление жанров.
 INSERT INTO Genres(name) VALUES ('POP');
-INSERT INTO Genres(name) VALUES ('RAP';
+INSERT INTO Genres(name) VALUES ('RAP');
 INSERT INTO Genres(name) VALUES ('RockNRoll');
 
 -- Добавление артистов.
